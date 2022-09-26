@@ -1,0 +1,21 @@
+table, th, td {
+    border: 1px black;
+    border-style: ridge;
+}
+table {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+td {
+    width: 50%;
+    text-align: center;
+}
+td:nth-child(odd) {
+    background-color: orange;
+}
+td:nth-child(even) {
+    background-color: aqua;
+}
