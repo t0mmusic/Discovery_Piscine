@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Balloon</title>
+    <script>
+        const colorEnum = [
+            "red",
+            "green",
+            "blue"
+        ];
+
+        var currColr = 0;
+
+        function makeBig() {
+            var circle = document.getElementById("balloon");
+            circle.style.width = `${parseInt(circle.style.width) + 10}px`;
+            circle.style.height = `${parseInt(circle.style.width) + 10}px`;
+            if (parseInt(circle.style.width) > 420)
+            {
+                circle.style.width = "200px";
+                circle.style.height = "200px";
+            }
+            currColr++;
+            currColr %= colorEnum.length;
+            circle.style.backgroundColor = colorEnum[currColr];
+        }
+        function shrink() {
+            var circle = document.getElementById("balloon");
+            if (circle.style.width != "200px")
+            {
+                circle.style.width = `${parseInt(circle.style.width) - 5}px`;
+                circle.style.height = `${parseInt(circle.style.width) - 5}px`;
+            }
+        }
+    </script>
+</head>
+<style>
+    #balloon {
+        border-radius: 210px;
+    }
+</style>
+<body>
+    <div id="balloon" onclick="makeBig()" onmouseout="shrink()"
+        style="width: 200px; height: 200px; background-color: red"></div>
+</body>
+
+</html>
