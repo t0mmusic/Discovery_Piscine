@@ -33,6 +33,9 @@
             {
                 circle.style.width = `${parseInt(circle.style.width) - 5}px`;
                 circle.style.height = `${parseInt(circle.style.width) - 5}px`;
+                currColr += 2;
+                currColr %= colorEnum.length;
+                circle.style.backgroundColor = colorEnum[currColr];
             }
         }
     </script>
