@@ -1,7 +1,7 @@
 function addItem() {
     let inputItem = prompt("Please enter a todo item.", "");
     
-    if (inputItem == null) {
+    if (inputItem == "") {
         console.log("Hooray!");
     }
     else
