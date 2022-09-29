@@ -26,10 +26,19 @@
             cursor: pointer;
             padding: 12px 8px 12px 40px;
             background: wheat;
+            list-style-type: none;
+            text-align: center;
         }
         .ft_list li:nth-child(odd)
         {
             background-color: antiquewhite;
+        }
+        .ft_list li:hover {
+            opacity: 75%;
+        }
+        h1 {
+            text-align: center;
+            padding: 2%;
         }
         .button {
             background-color: darkgray;
@@ -43,12 +52,14 @@
             background-color: grey;
         }
     </style>
-    <script src="todo.js"></script>
     <title>To Do List</title>
 </head>
 <body>
-    <div class="ft_list" id="todo">
+    <h1>To Do List</h1>
+    <div id="app"></div>
+    <div class="ft_list" id="ft_list">
     </div>
-    <div class="button" id="add" onclick="addItem()">Add Item</div>
+    <div class="button" id="add" onclick="addItem()">New</div>
 </body>
+<script src="todo.js"></script>
 </html>

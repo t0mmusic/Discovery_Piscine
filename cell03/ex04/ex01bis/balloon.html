@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        var count = 0;
+        var ballColours = ["red", "green", "blue"];
+        $('#balloon').click(function () {
+            var randColour = Math.floor(Math.random()*0xFFFFFF).toString(16);
+            count++;
+            if (count > 2)
+                count = 0;
+            $('#balloon').css('background-color', ballColours[count]);
+            var circ = $('#balloon').css('width');
+            var newSize = parseInt(circ) + 10 + "px";
+            if (parseInt(newSize) > 420)
+                newSize = 200;
+            $('#balloon').width(newSize);
+            $('#balloon').height(newSize);
+        })
+        $('#balloon').mouseout(function() {
+            var circ = parseInt($('#balloon').css('width'));
+            if (circ > 200) {
+                var newSize = circ - 5 + "px";
+                $('#balloon').css('width', newSize);
+                $('#balloon').css('height', newSize);
+            }
+            count--;
+            if (count < 0)
+                count = 2;
+            $('#balloon').css('background-color', ballColours[count]);
+        })
+    })
+    </script>
+    <title>Balloon</title>
+</head>
+<style>
+    * { 
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .container {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        padding: 10%;
+    }
+    .balloon {
+        border-radius: 210px;
+        transition: 500ms;
+        margin: 0 auto;
+        box-shadow: 0px 0px 25px 25px black;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="balloon" id="balloon" style="width: 200px; height: 200px; background-color: red"></div>
+    </div>
+</body>
+
+</html>

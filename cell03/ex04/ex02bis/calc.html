@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+    
+    $(document).ready(function() {
+        $('#calc').click(function() {
+            var first = parseFloat(document.getElementById("numOne").value);
+            var second = parseFloat(document.getElementById("numTwo").value);
+            var out = document.getElementById("out");
+            var op = document.getElementById("select").value;
+            if (op == "+")
+                out.value = first + second;
+            if (op == "-")
+                out.value = first - second;
+            if (op == "/")
+                out.value = first / second;
+            if (op == "*")
+                out.value = first * second;
+            if (op == "%")
+                out.value = first % second;
+            if (isNaN(first) || isNaN(second) || first < 0 || second < 0
+                || !Number.isInteger(first) || !Number.isInteger(second))
+                out.value = "Error :(";
+            if ((op == "/" || op == "%") && second == 0)
+                out.value = "It's over 9000!"
+            alert(out.value);
+            console.log(out.value);
+        })
+    })
+
+    function botherUser() {
+            alert("Please, use me...");
+        }
+
+    setInterval(botherUser, 30000);
+
+    </script>
+    <style>
+        * { 
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            height: 100%;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            margin: 20%;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            padding: 12px 16px;
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .drop {
+            display: inline;
+        }
+        select {
+            width: 100%;
+        }
+        .dropdown-content .drop:hover {
+            background-color: rgb(192, 192, 188);
+        }
+        .button {
+            background-color: darkgray;
+            border-style: groove;
+            padding: 1%;
+        }
+        .button:hover {
+            background-color: grey;
+        }
+    </style>
+    <title>Calc-You-Later!</title>
+</head>
+<body>
+    
+    <div class="container">
+        <input type="text" id="numOne"></input>
+        <div class="dropdown">
+            <form>
+                <select id="select">
+                    <option id="plus">+</option>
+                    <option id="minus">-</option>
+                    <option id="divide">/</option>
+                    <option id="mult">*</option>
+                    <option id="mod">%</option>
+                </select>
+            </form>
+        </div>
+        <input type="text" id="numTwo"></input>
+        <div class="button" id="calc">Try me!</div>
+        <output type="text" id="out"></output>
+    </div>
+</body>
+</html>
