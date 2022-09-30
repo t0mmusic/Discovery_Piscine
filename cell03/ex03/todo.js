@@ -8,7 +8,6 @@ function loadCookie() {
     {
         addToList(arr[i]);
     }
-
 }
 
 function addToArray (inputItem) {

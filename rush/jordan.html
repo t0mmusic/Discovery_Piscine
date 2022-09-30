@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="jordy.css">
+    <title>Rush Time!!!</title>
+</head>
+<body>
+    <ul id="nav" style="width: 0px">
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="mint.html">Mint Profile</a></li>
+        <li>
+            <div class="dropdown">
+            <button class="dropbtn">Page Nav
+                    <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#top">Profile</a>
+                <a href="#middle">Experience</a>
+                <a href="#bottom">Contact</a>
+            </div>
+            </div>
+        </li>
+    </ul>
+    <div class="container">
+        <div class="nav-pop" id="nav-pop" onmouseover="popOut()">>></div>
+    </div>
+    <div class="page-content" onmouseover="closeNav()">
+        <div class="black-box" id="TOP">
+            <a href="index.html">Return Home</a>
+            <p>Profile</p>
+        </div>
+        <div class="parallax" id="top" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/1200px-Cat_November_2010-1a.jpg')">
+            <p>Hello, I am cat! I am programmer! How incredible!</p>
+        </div>
+        <div class="black-box">
+            <p>Professional Experience</p>
+            <a href="#TOP">Return to top</a>
+        </div>
+        <div class="parallax" id="middle" style="background-image: url('https://www.codingem.com/wp-content/uploads/2021/10/juanjo-jaramillo-mZnx9429i94-unsplash-scaled.jpg')">
+            <p>This is what I see everyday! What a world we live in!</p>
+        </div>
+        <div class="black-box">
+            <p>Contact Information</p>
+            <a href="#TOP">Return to top</a>
+        </div>
+        <div class="parallax" id="bottom" style="background-image: url('https://petapixel.com/assets/uploads/2021/06/Social-Medias-Impact-on-Landscape-and-Nature-Photography.jpg')">
+            <p>Please don't contact me! Am shy!</p>
+        </div>
+        <div class="black-box">
+                <a href="#TOP">Return to top</a>
+            </div>
+    </div>
+    
+</body>
+    <script>
+        nav = document.getElementById("nav");
+        navBtn = document.getElementById("nav-pop");
+        function popOut() {
+            if (nav.style.width == "0px")
+            {
+                nav.style.width = "150px";
+                navBtn.style.marginLeft = "150px";
+                navBtn.textContent = '<<';
+            }
+        }
+        function closeNav() {
+            nav.style.width = "0px";
+            navBtn.style.marginLeft = "10px";
+            navBtn.textContent = '>>';
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.1/js/bootstrap.min.js"></script>
+</html>
